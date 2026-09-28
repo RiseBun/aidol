@@ -3,4 +3,4 @@ set -eu
 mkdir -p dist/assets dist/zh
 cp team.html index.html season-01.html join.html partner.html admin.html style.css app.js admin.js dist/
 cp zh/*.html dist/zh/
-cp assets/aidol-rounded-logo.png assets/peinan-li-smile.png assets/hero.png assets/aidol-wordmark.png assets/aidol-hackathon-variety-poster.png assets/founder-photo.jpg assets/founder-02-studio.png dist/assets/
+cp assets/favicon.svg assets/aidol-rounded-logo.png assets/peinan-li-smile.png assets/hero.png assets/aidol-wordmark.png assets/aidol-hackathon-variety-poster.png assets/founder-photo.jpg assets/founder-02-studio.png dist/assets/
