@@ -9,3 +9,94 @@
 @media(max-width:1000px){.editorial-grid,.team-layout,.roster-layout,.info-grid{gap:40px}.season-hero-grid{gap:40px;grid-template-columns:1.2fr .8fr}.form-layout{gap:32px;grid-template-columns:.7fr 1.3fr}.hero-art{right:-140px;width:75%;opacity:.55}.hero-copy{max-width:720px}.season-banner{flex-wrap:wrap}.season-banner>span:last-child{margin-left:auto}.form-surface{padding:26px}}
 @media(max-width:760px){html{scroll-padding-top:30px}.site-header{height:76px;gap:20px}.wordmark-frame{width:90px}.header-action{display:none}.menu-button{display:flex;gap:20px;align-items:center;border:0;background:none;color:var(--fg);padding:10px 0;font-size:15px}.site-header nav{display:none;position:absolute;top:75px;left:0;right:0;padding:22px var(--gutter);background:#14151b;border-bottom:1px solid #444;flex-direction:column;align-items:stretch;gap:10px}.site-header nav.open{display:flex}.site-header nav a{min-height:44px}.hero{min-height:670px;padding-top:22px;padding-bottom:45px}.hero-top{font-size:11px;align-items:start}.hero-top>span:first-child{max-width:170px}.hero-top>span:last-child{white-space:nowrap}.hero-copy{margin-top:62px}.hero h1{font-size:clamp(44px,10.5vw,68px);letter-spacing:-.045em}.hero-position{font-size:18px;max-width:340px}.hero-intro{font-size:16px}.hero-art{right:-115px;top:195px;width:110%;height:460px;opacity:.26}.hero-copy>.eyebrow{font-size:12px}.hero .fine-print{max-width:310px}.actions{gap:12px}.button{padding:12px 19px;font-size:14px;gap:24px;min-height:50px}.season-banner{display:flex;flex-direction:column;align-items:start;gap:12px;padding-top:25px;padding-bottom:25px}.season-banner>span:last-child{margin-left:0}.season-banner strong{font-size:22px}.section{padding-top:54px;padding-bottom:54px}.section-label{margin-bottom:30px;font-size:12px;align-items:start;gap:16px}.section-label>span:last-child{text-align:right;max-width:45%}.editorial-grid,.roster-layout,.team-layout,.info-grid,.form-layout{grid-template-columns:1fr;gap:28px}.editorial-grid h2{line-height:1.4}.prose .lead{font-size:20px}.brand-pillars,.rule-grid{grid-template-columns:1fr;gap:26px;margin-top:32px;padding-top:26px}.brand-pillars article,.rule-grid article{max-width:600px}.brand-pillars h3{font-size:21px}.roster-line{font-size:23px}.roster-invitation{padding:25px 0 0;border-left:0;border-top:1px solid #4c435e}.roster-invitation h3{font-size:28px}.section-heading{flex-direction:column;align-items:start;gap:22px;margin-bottom:28px}.community-grid{grid-template-columns:1fr;gap:27px;padding-top:25px}.community-grid h3{font-size:22px}.team-portraits{gap:16px;max-width:480px}.team-layout>div>p{margin-top:15px}.closing{padding-top:42px;padding-bottom:52px}.closing h2{font-size:30px}.site-footer{gap:18px;padding-top:24px;padding-bottom:24px}.site-footer div{width:100%;gap:23px;flex-wrap:wrap}.site-footer>p{font-size:13px}.site-footer small{font-size:12px}.season-hero{padding-top:15px}.season-hero-grid{grid-template-columns:1fr;gap:34px}.season-hero h1{font-size:clamp(42px,10vw,64px)}.season-poster{max-width:260px;justify-self:center;transform:rotate(1deg)}.season-poster figcaption{font-size:12px}.season-facts{grid-template-columns:1fr 1fr;margin-top:35px;gap:22px 18px}.season-facts strong{font-size:16px}.rule-grid{margin-top:0;padding-top:6px}.journey-list li{grid-template-columns:38px 1fr;gap:10px 15px;padding:26px 0}.journey-list li>p{grid-column:2}.journey-list h3{font-size:24px}.journey-number{font-size:25px}.journey-list .step-line{margin-top:6px}.notice{flex-direction:column;gap:7px;padding:20px}.info-list>div{grid-template-columns:1fr;gap:5px}.form-intro{position:static}.form-intro h1{font-size:38px}.form-context{margin:22px 0;padding-top:18px}.form-intro>.fine-print{font-size:14px}.form-surface{padding:24px 20px}.form-grid{grid-template-columns:1fr}.form-page{padding-bottom:55px}.form-heading h2{font-size:26px}.form-actions .button{width:100%}.admin-record dl{grid-template-columns:1fr;gap:4px}.admin-record dd{margin-bottom:12px}.admin-page{padding:28px 20px}.admin-update textarea{min-width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+.team-section h1{font-size:clamp(32px,4vw,54px);line-height:1.4;font-weight:600;margin:0}.team-section{min-height:65vh}
+
+.portrait-crop{aspect-ratio:935/1024;overflow:hidden;background:#fff}.team-portraits .portrait-crop img{display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover}.portrait-peinan img{transform:scale(1.12);transform-origin:50% 10%}.team-portraits figcaption strong{display:block;color:var(--fg);font-size:17px;font-weight:500}.team-portraits figcaption span{display:block;margin-top:4px}
+
+
+/* Emil review: responsive feedback, legible forms, quiet motion. */
+:root{--ease-out:cubic-bezier(.23,1,.32,1)}
+h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
+.button,.menu-button{transition:transform 140ms var(--ease-out),background-color 160ms ease,color 160ms ease}
+.button:active:not(:disabled),.menu-button:active{transform:scale(.97)}
+.button:disabled{cursor:progress;opacity:.8}
+.button.is-pending{box-shadow:inset 0 0 0 2px rgba(0,0,0,.15)}
+.form-feedback{min-height:1.8em;color:var(--muted)}
+.form-feedback[data-state="error"]{color:#f4b2c4}
+.form-surface{border-radius:12px}
+.field input,.field select,.field textarea{border-radius:6px}
+.field:focus-within label{color:var(--accent)}
+.field-hint{font-size:13px;line-height:1.6;margin-top:8px;color:var(--muted)}
+.field input:user-invalid,.field select:user-invalid,.consent input:user-invalid{border-color:#f4b2c4;outline-color:#f4b2c4}
+.site-footer a{display:inline-flex;align-items:center;min-height:44px}
+.team-section{padding-top:40px;min-height:0;padding-bottom:80px}
+.form-intro h1{font-size:clamp(34px,3.2vw,46px);line-height:1.4}
+.form-intro h1 span{white-space:nowrap}
+#format>.fine-print{margin-top:28px;max-width:760px}
+.nav-glass{display:none;pointer-events:none}
+@media(min-width:761px){
+ .site-header nav{position:relative;isolation:isolate;gap:6px;padding:5px;border-radius:32px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055);flex-shrink:0}
+ .site-header nav a{position:relative;z-index:1;padding:10px 17px;border-radius:24px;white-space:nowrap;transition:color 160ms ease}
+ .nav-glass{display:block;position:absolute;z-index:0;left:0;top:0;width:100px;height:44px;transform-origin:0 0;border-radius:24px;opacity:0;background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(215,206,255,.06) 48%,rgba(255,255,255,.11));border:1px solid rgba(255,255,255,.23);box-shadow:inset 0 1px 1px rgba(255,255,255,.3),0 4px 12px rgba(0,0,0,.15);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);transition:transform 240ms var(--ease-out),opacity 140ms ease}
+ .nav-glass.is-visible{opacity:1}.nav-glass.is-instant{transition:none}
+}
+@media(min-width:761px) and (max-width:1000px){.site-header{gap:12px}.site-header nav a{padding:10px 10px}.site-header nav{gap:2px}.header-action span{margin-left:10px}}
+@media(max-width:760px){
+ .menu-button{min-width:72px;min-height:44px;justify-content:space-between}
+ .site-header nav{border-radius:0 0 16px 16px;box-shadow:0 18px 30px rgba(0,0,0,.3)}
+ .site-header nav a{padding:10px 14px;border-radius:8px}
+ .site-header nav a[aria-current]{background:rgba(198,188,255,.12);color:var(--fg)}
+ .hero{min-height:0;padding-bottom:64px}.hero-copy{margin-top:48px}
+ .team-section{padding-top:24px;padding-bottom:54px}
+ .form-intro h1{font-size:clamp(30px,7.5vw,38px)}
+ .journey-list h3{font-size:22px}
+ .form-heading{margin-bottom:24px}
+}
+@media(hover:hover) and (pointer:fine){
+ .site-header nav a:hover{color:#fff}
+ .field input:hover,.field select:hover,.field textarea:hover{border-color:#878291}
+}
+@media(hover:none){
+ .button.primary:hover{background:var(--accent)}.button.secondary:hover{background:transparent}.season-banner:hover{background:#1a1626}
+}
+html.keyboard-input{scroll-behavior:auto}
+.keyboard-input .button,.keyboard-input .menu-button,.keyboard-input .nav-glass,.keyboard-input .site-header nav a{transition:none}
+@media(prefers-reduced-motion:reduce){.button:active:not(:disabled),.menu-button:active{transform:none}.nav-glass{transition:none}}
+
+/* Mobile menu: transitions can reverse immediately during rapid toggles. */
+@media(max-width:760px){
+ .site-header nav{display:flex;visibility:hidden;pointer-events:none;opacity:0;transform:scale(.98);transform-origin:calc(100% - var(--gutter)) 0;transition:opacity 120ms var(--ease-out),transform 120ms var(--ease-out),visibility 0s 120ms}
+ .site-header nav.open{visibility:visible;pointer-events:auto;opacity:1;transform:scale(1);transition:opacity 180ms var(--ease-out),transform 180ms var(--ease-out),visibility 0s}
+ .keyboard-input .site-header nav{transition:none}
+}
+@media(max-width:760px) and (prefers-reduced-motion:reduce){
+ .site-header nav,.site-header nav.open{transform:none;transition:opacity 100ms var(--ease-out),visibility 0s 100ms!important}
+ .site-header nav.open{transition:opacity 100ms var(--ease-out),visibility 0s!important}
+ .keyboard-input .site-header nav{transition:none!important}
+}
+
+/* Bilingual navigation and English editorial rhythm. */
+.site-header .logo{order:0}.site-header nav{order:1}.site-header .header-action{order:2}.language-switch{order:3;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;flex-shrink:0;font-size:13px;color:var(--muted);border-radius:22px}.language-switch:hover{color:var(--fg);background:rgba(255,255,255,.06)}.site-header .menu-button{order:4}
+html:lang(en) h1,html:lang(en) h2,html:lang(en) h3{text-wrap:balance}
+html:lang(en) .hero h1{font-size:clamp(48px,6vw,82px);line-height:1.06;max-width:780px}
+html:lang(en) .hero-copy{max-width:800px}
+html:lang(en) .hero-position{max-width:520px;line-height:1.6}
+html:lang(en) .editorial-grid h2{line-height:1.15}
+html:lang(en) .form-intro h1{line-height:1.12}
+html:lang(en) .form-intro h1 span{white-space:normal}
+html:lang(en) .team-layout h1{font-size:clamp(36px,4.2vw,58px);line-height:1.12}
+html:lang(en) .season-hero h1{line-height:1.08;font-size:clamp(42px,5.5vw,72px)}
+html:lang(en) .journey-list h3{font-size:clamp(23px,2.4vw,32px)}
+html:lang(en) .hero-top>span:last-child{white-space:normal;text-align:right;max-width:180px}
+@media(min-width:761px) and (max-width:1100px){.site-header .header-action{display:none}}
+@media(max-width:760px){.site-header{gap:14px}.site-header .logo{margin-right:auto}.language-switch{min-width:44px}.site-header .menu-button{gap:10px}html:lang(en) .hero h1{font-size:clamp(42px,10vw,64px)}html:lang(en) .hero-top{font-size:10px;gap:14px}html:lang(en) .hero-top>span:last-child{max-width:130px}html:lang(en) .hero-copy{margin-top:48px}html:lang(en) .season-hero h1{font-size:clamp(40px,10vw,64px)}html:lang(en) .section-label{font-size:11px}}
+
+.wordmark-text{display:block;font-size:34px;font-weight:800;letter-spacing:-.055em;line-height:1}
+@media(max-width:760px){.wordmark-text{font-size:29px}}
+
+/* Use the supplied artwork unchanged; crop its whitespace in the layout. */
+.brand-image{display:block;position:relative;overflow:hidden;width:108px;aspect-ratio:1036/330;mix-blend-mode:screen}
+.brand-image img{position:absolute;max-width:none;width:148.263%;height:auto;left:-24.035%;top:-100%;filter:invert(1);mix-blend-mode:screen}
+.footer-name .brand-image{width:90px}
+@media(max-width:760px){.logo .brand-image{width:90px}}

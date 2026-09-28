@@ -12,8 +12,9 @@ COMMON={'name':200,'contact':150,'organization':200}
 CREATOR={**COMMON,'entry_type':30,'team_size':3,'project_stage':50,'interest':200,'project_summary':2000}
 PARTNER={**COMMON,'partner_type':50,'scope':50,'resources':2000,'expectations':2000}
 LABELS={'name':'称呼','contact':'联系方式','organization':'高校或机构','entry_type':'参与身份','team_size':'团队人数','project_stage':'项目进度','interest':'兴趣方向','project_summary':'项目简介','partner_type':'合作类型','scope':'合作范围','resources':'可提供资源','expectations':'参与意向'}
-PUBLIC={'/':'index.html','/index.html':'index.html','/season-01.html':'season-01.html','/join.html':'join.html','/partner.html':'partner.html','/admin.html':'admin.html','/style.css':'style.css','/app.js':'app.js','/admin.js':'admin.js'}
-ASSETS={'hero.png','aidol-wordmark.png','aidol-hackathon-variety-poster.png','founder-photo.jpg','founder-02-studio.png'}
+PUBLIC={'/team.html':'team.html','/':'index.html','/index.html':'index.html','/season-01.html':'season-01.html','/join.html':'join.html','/partner.html':'partner.html','/admin.html':'admin.html','/style.css':'style.css','/app.js':'app.js','/admin.js':'admin.js'}
+PUBLIC.update({'/zh/':'zh/index.html', **{'/zh/'+name:'zh/'+name for name in ('index.html','join.html','partner.html','team.html','season-01.html')}})
+ASSETS={'aidol-rounded-logo.png','peinan-li-smile.png','hero.png','aidol-wordmark.png','aidol-hackathon-variety-poster.png','founder-photo.jpg','founder-02-studio.png'}
 def now():return datetime.now(timezone.utc).isoformat()
 class Store:
  def __init__(self,path):
@@ -138,9 +139,9 @@ class Handler(BaseHTTPRequestHandler):
     if values['project_stage'] not in {'','尚未确定','想法阶段','已有原型','可演示作品'}:raise ValueError('请选择项目进度。')
    else:
     if not values['organization']:raise ValueError('请填写机构名称。')
-    if values['partner_type'] not in {'高校与实验室','品牌与赞助','场地与活动支持','硬件与设备','技术与导师','内容与传播','其他合作'}:raise ValueError('请选择合作类型。')
+    if values['partner_type'] not in {'高校与实验室','品牌与赞助','场地与活动支持','硬件与设备','技术与导师','内容与传播','企业人才与场景','产业与投资','其他合作'}:raise ValueError('请选择合作类型。')
     if values['scope'] not in {'上海首季合作','长期品牌合作','两者均有意向','希望进一步交流'}:raise ValueError('请选择合作范围。')
-   values['consent_version']='2026-09-27-v1'
+   values['consent_version']='2026-09-28-v2'
   except (ValueError,TypeError,AttributeError) as e:return self.send(400,{'error':str(e) if isinstance(e,ValueError) and str(e) not in {'badly formed hexadecimal UUID string'} else '提交格式不正确，请刷新后重试。'})
   reference='AI-'+uuid.uuid4().hex[:12].upper();timestamp=now();payload=json.dumps(values,ensure_ascii=False,sort_keys=True)
   with self.server.store.connect() as c:
