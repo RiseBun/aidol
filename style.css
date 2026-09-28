@@ -100,3 +100,7 @@ html:lang(en) .hero-top>span:last-child{white-space:normal;text-align:right;max-
 .brand-image img{position:absolute;max-width:none;width:148.263%;height:auto;left:-24.035%;top:-100%;filter:invert(1);mix-blend-mode:screen}
 .footer-name .brand-image{width:90px}
 @media(max-width:760px){.logo .brand-image{width:90px}}
+
+.embuddies-wordmark{font-size:30px;line-height:1;font-weight:700;letter-spacing:-.055em}.footer-name .embuddies-wordmark{font-size:25px}.program-links{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:24px;padding-bottom:32px}.program-links>a{padding:28px;border:1px solid var(--line);background:var(--surface)}.program-links h3{margin:14px 0 8px}.program-links>a:hover{border-color:var(--accent)}.program-actions{margin-top:30px}
+@media(min-width:761px){.site-header nav a{padding-left:12px;padding-right:12px}.site-header{gap:18px}.site-header .header-action{display:none}}
+@media(max-width:760px){.embuddies-wordmark{font-size:27px}.program-links{grid-template-columns:1fr;gap:16px}.program-links>a{padding:24px}}
